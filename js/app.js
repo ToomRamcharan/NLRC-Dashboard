@@ -203,7 +203,7 @@ const DashboardApp = (() => {
 
             if (valueEl) {
                 var displayValue = '';
-                if (data.unit === '$') {
+                if (data.unit === '₹') {
                     displayValue = DashboardData.formatCurrency(data.value);
                 } else if (data.unit === '%') {
                     displayValue = String(data.value) + '%';

@@ -97,25 +97,25 @@ const DashboardData = (() => {
         unit: 'months',
         change: runwayChange,
         direction: runwayChange >= 0 ? 'up' : 'down',
-        subtitle: `$${formatNumber(latest.cashBalance)} balance`
+        subtitle: `₹${formatNumber(latest.cashBalance)} balance`
       },
       mrr: {
         value: latest.revenue,
-        unit: '$',
+        unit: '₹',
         change: revenueChange,
         direction: revenueChange >= 0 ? 'up' : 'down',
-        subtitle: `$${formatNumber(totalRevenue)} total`
+        subtitle: `₹${formatNumber(totalRevenue)} total`
       },
       burnRate: {
         value: avgBurnRate,
-        unit: '$',
+        unit: '₹',
         change: burnChange,
         direction: burnChange <= 0 ? 'up' : 'down', // Lower burn is better
-        subtitle: `$${formatNumber(latest.profit)} net profit`
+        subtitle: `₹${formatNumber(latest.profit)} net profit`
       },
       pipeline: {
         value: latest.pipeline,
-        unit: '$',
+        unit: '₹',
         change: pipelineChange,
         direction: pipelineChange >= 0 ? 'up' : 'down',
         subtitle: `${latest.newDeals} new deals`
@@ -185,9 +185,9 @@ const DashboardData = (() => {
   }
 
   function formatCurrency(num) {
-    if (num >= 1000000) return '$' + (num / 1000000).toFixed(1) + 'M';
-    if (num >= 1000) return '$' + (num / 1000).toFixed(0) + 'K';
-    return '$' + num;
+    if (num >= 1000000) return '₹' + (num / 1000000).toFixed(1) + 'M';
+    if (num >= 1000) return '₹' + (num / 1000).toFixed(0) + 'K';
+    return '₹' + num;
   }
 
   // ---- Custom Entry Management ----
